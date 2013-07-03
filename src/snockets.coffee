@@ -212,6 +212,7 @@ module.exports = class Snockets
       if timeEq @cache[filePath]?.mtime, stats.mtime
         return callback null, false
       console.log("reading file " + filePath)
+      console.log("post process = " + @options.snocketsPostProcess)
       if flags.async
           fs.readFile @absPath(filePath), (err, data) =>
             return callback err if err
