@@ -322,7 +322,7 @@ minify = (js) ->
   ast = jsp.parse js
   ast = pro.ast_mangle ast
   ast = pro.ast_squeeze ast
-  pro.gen_code ast
+  pro.gen_code ast, {ascii_only: true}
 
 timeEq = (date1, date2) ->
   date1? and date2? and date1.getTime() is date2.getTime()
